@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+</head>
+<script>
+	function validate() {
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		var password2 = document.getElementById("password2");
+		var SSN = document.getElementById("ssn");
+		if (username == "" || password == "") {
+			alert("Username or password cannot be null");
+			return false;
+		} else if (password != password2) {
+			alert("Passwords do not match");
+			return false;
+		} else if (ssn.length() != 8){
+			alert("SSN is not 8 numbers long");
+			return false;
+		} else if (ssn != (int)ssn){
+			alert("SSN is not a number!");
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+</script>
+<body>
+
+	<h4>Register</h4>
+	<form action="custreg" method="post">
+		First Name: <input id="username" name="username" type="text" required />
+		<br /> Last Name: <input id="lastname" name="lastname" type="text"
+			required /> <br /> Address: <input id="address" name="address"
+			type="text" required /> <br /> City: <input id="city" name="city"
+			type="text" required /> <br /> Country: <input id="country"
+			name="country" type="text" required /> <br /> Postal/ZIP Code: <input
+			id="postalcode" name="postalcode" type="text" required /> <br />
+		SSN: <input id="ssn" name="ssn" type="text" required /> <br />Password:
+		<input type="password" size="12" id="password" name="password"
+			required /> <br /> Confirm Password: <input type="password"
+			size="12" id="password2" name="password2" required /> <br /> <input
+			type="submit" value="submit" onclick="return validate();" />
+
+	</form>
+
+</body>
+</html>

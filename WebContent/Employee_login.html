@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee Login</title>
+</head>
+<script>
+	function validate() {
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		if (username == "" || password == "") {
+			alert("Username or password cannot be null");
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+</script>
+<body>
+	<h4>Employee Login</h4>
+	<form action="employeelogin" method="post">
+		Username: <input id="username" name="username" type="text" required />
+		<br /> Password: <input id="password" name="password" type="password" required /><br /> <input
+			type="submit" value="Login" onclick="return validate();" />
+	</form>
+
+	<button onclick="location.href='Employee_register.html'">Register</button>
+
+</body>
+</html>
